@@ -2,11 +2,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  /* color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,9 +9,7 @@
   -webkit-text-size-adjust: 100%;
 }
 
-*{
-  border: none;
-  outline: none;
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -26,8 +19,9 @@
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -56,16 +50,18 @@ button {
   cursor: pointer;
   transition: 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
   color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.login__main{
+.login__main {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -73,9 +69,10 @@ button:focus-visible {
   align-items: center;
 }
 
-.title span{
+.title span {
   color: rgb(0, 166, 166);
 }
+
 .login__title {
   animation: pulse 3s ease-in-out infinite;
 }
@@ -89,7 +86,7 @@ button:focus-visible {
   }
 }
 
-.login__form{
+.login__form {
   margin-top: 80px;
   width: 510px;
   display: flex;
@@ -97,9 +94,9 @@ button:focus-visible {
   justify-content: space-between;
 }
 
-
-.login__mail, .login__password, .login__btn {
-  
+.login__mail,
+.login__password,
+.login__btn {
   width: 100px;
   height: 40px;
   background-color: transparent;
@@ -107,11 +104,10 @@ button:focus-visible {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1), 0 0 60px rgba(0, 0, 0, 0.1);
   transition: box-shadow ease 0.25s;
 }
+
 .login__mail:hover,
-.login__password:hover{
-  
-  box-shadow:  0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px #646cff, 0 0 20px rgba(0, 0, 0, 0.1);
-  
+.login__password:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px #646cff, 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .deep {
@@ -122,30 +118,30 @@ button:focus-visible {
   height: 100%;
   padding: 10px;
   box-sizing: border-box;
-  /* box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(0, 0, 0, 0.1); */
 }
 
-.login__btn{
+.login__btn {
   background-color: rgb(0, 166, 166);
-  color: #fff; 
-  font-size: 16px; 
-  text-align: center; 
-  padding: 10px; 
-  cursor: pointer; 
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.signup__btn{
+.signup__btn {
   background-color: rgb(166, 0, 97);
 }
-.signup__btn:hover{
+
+.signup__btn:hover {
   border-color: rgb(0, 0, 0);
   color: rgb(0, 0, 0);
 }
 
-.login__link{
+.login__link {
   margin-top: 40px;
 }
 
@@ -154,41 +150,45 @@ button:focus-visible {
 }
 
 @keyframes moveSideToSide {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(15px); }
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px);
+  }
 }
 
-.signup__title span{
+.signup__title span {
   color: rgb(166, 0, 97);
 }
-.signup__input:hover{
-  box-shadow:  0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgb(166, 0, 97), 0 0 20px rgba(0, 0, 0, 0.1);
+
+.signup__input:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgb(166, 0, 97), 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 /* message window */
 
-.chat__section{
+.chat__section {
   width: 100%;
- 
 }
 
-.message__window{
+.message__window {
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   padding: 20px;
   margin-top: 30px;
-  
-  width: 800px;
-  height: 300px;
+  width: 943px;
+  height: 380px;
   overflow-y: scroll;
   overflow-x: hidden;
   border-radius: 10px;
   background: linear-gradient(to bottom, #ffffff, #e0e0e0, #f5f5f5);
-  -webkit-box-shadow: inset 5px 2px 11px 2px rgba(0,0,0,0.23); 
-box-shadow: inset 5px 2px 11px 2px rgba(0,0,0,0.23);
+  -webkit-box-shadow: inset 5px 2px 11px 2px rgba(0, 0, 0, 0.23);
+  box-shadow: inset 5px 2px 11px 2px rgba(0, 0, 0, 0.23);
 }
-.message__content{
+
+.message__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -196,13 +196,11 @@ box-shadow: inset 5px 2px 11px 2px rgba(0,0,0,0.23);
   width: 100%;
 }
 
-
 .message {
   margin-top: 15px;
   display: flex;
   align-items: center;
   width: 80%;
-  
   border-radius: 10px;
   background-color: #f4f4f4;
   position: relative;
@@ -210,34 +208,33 @@ box-shadow: inset 5px 2px 11px 2px rgba(0,0,0,0.23);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
 .message__ava {
-  background: #f0f0f0; 
-  padding: 8px; 
+  background: #f0f0f0;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100px;
-  border: 2px solid #007BFF; 
-  border-radius: 15px; 
+  border: 2px solid #007BFF;
+  border-radius: 15px;
 }
 
-.message__ava img{
+.message__ava img {
   width: 35%;
   object-fit: contain;
 }
-.message__text{
+
+.message__text {
   padding: 8px;
 }
-.nickname{
+
+.nickname {
   font-size: 10px;
 }
 
 .message__input {
   margin-top: 30px;
-  width: 100%;
+  width: 70%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
@@ -245,11 +242,10 @@ box-shadow: inset 5px 2px 11px 2px rgba(0,0,0,0.23);
   outline: none;
   transition: border-color 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
-
 }
 
 .message__input:focus {
-  border-color: #007BFF; 
+  border-color: #007BFF;
 }
 
 .message__btn {
@@ -266,12 +262,12 @@ box-shadow: inset 5px 2px 11px 2px rgba(0,0,0,0.23);
 }
 
 .message__btn:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3;
   color: white;
 }
 
 .logout-btn {
-  background-color: #d9534f; 
+  background-color: #d9534f;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -282,30 +278,26 @@ box-shadow: inset 5px 2px 11px 2px rgba(0,0,0,0.23);
 }
 
 .logout-btn:hover {
-  background-color: #c9302c; 
+  background-color: #c9302c;
   color: white;
 }
-.chat-header{
+
+.chat-header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.header-img{
+
+.header-img {
   width: 6%;
-  
 }
-.header-img img{
+
+.header-img img {
   width: 100%;
   object-fit: cover;
   border-radius: 15px;
 }
-
-
-
-
-
-
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -319,7 +311,6 @@ box-shadow: inset 5px 2px 11px 2px rgba(0,0,0,0.23);
     background-color: #f9f9f9;
   }
 }
-
 
 #root {
   max-width: 1280px;
