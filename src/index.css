@@ -3,15 +3,24 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+*{
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
 }
 
 a {
@@ -38,22 +47,143 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 3px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #bfbfbf;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: 0.25s;
 }
 button:hover {
   border-color: #646cff;
+  color: #646cff;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+.login__main{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title span{
+  color: rgb(0, 166, 166);
+}
+.login__title {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.login__form{
+  margin-top: 80px;
+  width: 510px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.login__mail, .login__password, .login__btn {
+  
+  width: 100px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1), 0 0 60px rgba(0, 0, 0, 0.1);
+  transition: box-shadow ease 0.25s;
+}
+.login__mail:hover,
+.login__password:hover{
+  
+  box-shadow:  0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px #646cff, 0 0 20px rgba(0, 0, 0, 0.1);
+  
+}
+
+.deep {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  /* box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(0, 0, 0, 0.1); */
+}
+
+.login__btn{
+  background-color: rgb(0, 166, 166);
+  color: #fff; 
+  font-size: 16px; 
+  text-align: center; 
+  padding: 10px; 
+  cursor: pointer; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup__btn{
+  background-color: rgb(166, 0, 97);
+}
+.signup__btn:hover{
+  border-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+}
+
+.login__link{
+  margin-top: 40px;
+}
+
+.signup__title {
+  animation: moveSideToSide 2s ease-in-out infinite;
+}
+
+@keyframes moveSideToSide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(15px); }
+}
+
+.signup__title span{
+  color: rgb(166, 0, 97);
+}
+.signup__input:hover{
+  box-shadow:  0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgb(166, 0, 97), 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* message window */
+
+.chat__section{
+  width: 100%;
+ 
+}
+
+.message__window{
+  padding: 20px;
+  margin-top: 30px;
+  border: 3px solid black;
+  width: 800px;
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 15px;
+  background: linear-gradient(to bottom, white, lightgrey);
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

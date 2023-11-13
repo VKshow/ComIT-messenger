@@ -71,9 +71,10 @@ export default function Home({ userEmail }) {
 
   return (
     <>
-      <section>
-        <div className="todo">
-          <h1 className="header">Todo-App</h1>
+      <section className="chat__section">
+      <h1 className="header">Leave your message</h1>
+        <div className="message__window">
+          
 
           <div>
             <div className="todo-content">
@@ -89,6 +90,10 @@ export default function Home({ userEmail }) {
               })}
             </div>
 
+            
+          </div>
+        </div>
+        <div>
             <div>
               <input
                 type="text"
@@ -103,8 +108,7 @@ export default function Home({ userEmail }) {
                 Submit
               </button>
             </div>
-          </div>
-        </div>
+            </div>
       </section>
       <div>
         <button onClick={handleLogout}> Logout </button>

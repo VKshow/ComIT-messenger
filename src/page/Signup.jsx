@@ -34,12 +34,12 @@ const Signup = () => {
     <main>
       <section>
         <div>
-          <div>
-            <h1>TODO App</h1>
-            <form>
+          <div  className="login__main">
+            <h1  className="title signup__title">Please <span>Sign Up</span> to start chating</h1>
+            <form className="login__form">
               <div>
-                <label htmlFor="email-address">Email address</label>
-                <input
+                <label htmlFor="email-address"></label>
+                <input  className="login__mail deep signup__input"
                   type="email"
                   label="Email address"
                   value={email}
@@ -50,8 +50,8 @@ const Signup = () => {
               </div>
 
               <div>
-                <label htmlFor="password">Password</label>
-                <input
+                <label htmlFor="password"></label>
+                <input className="login__mail deep signup__input"
                   type="password"
                   label="Create password"
                   value={password}
@@ -61,13 +61,13 @@ const Signup = () => {
                 />
               </div>
 
-              <button type="submit" onClick={onSubmit}>
+              <button className="login__btn signup__btn" type="submit" onClick={onSubmit}>
                 Sign up
               </button>
             </form>
 
-            <p>
-              Already have an account? <NavLink to="/login">Sign in</NavLink>
+            <p className="text-sm text-white text-center login__link">
+              <strong>Already have an account?</strong> <NavLink to="/login"><strong>Sign in</strong></NavLink>
             </p>
           </div>
         </div>

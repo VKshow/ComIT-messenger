@@ -16,12 +16,12 @@ const App = () => {
     setUserEmail(email);
   };
 
-  const router = createBrowserRouter([
-    { path: "/", element: <Home userEmail={userEmail} sendEmailToParent={sendEmailToParent} />, errorElement: <ErrorPage /> },
-    { path: "/signup", element: <Signup /> },
-    { path: "/login", element: <Login sendEmailToParent={sendEmailToParent} /> },
-    { path: "/x", element: <Anotherpage /> },
-  ]);
+const router = createBrowserRouter([
+  { path: "/", element: <Home userEmail={userEmail} sendEmailToParent={sendEmailToParent} />, errorElement: <ErrorPage /> },
+  { path: "/signup", element: <Signup /> },
+  { path: "/login", element: <Login sendEmailToParent={sendEmailToParent} /> },
+  { path: "/x", element: <Anotherpage /> },
+]);
 
   return (
     <React.StrictMode>

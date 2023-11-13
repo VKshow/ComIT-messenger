@@ -30,13 +30,13 @@ const Login = ({sendEmailToParent}) => {
     <>
       <main>
         <section>
-          <div>
-            <h1>TODO App</h1>
+          <div className="login__main">
+            <h1 className="login__title title">Welcome to <span>ComIT</span> chat</h1>
 
-            <form>
+            <form className="login__form">
               <div>
-                <label htmlFor="email-address">Email address</label>
-                <input
+                <label htmlFor="email-address"></label>
+                <input className="login__mail deep"
                   id="email-address"
                   name="email"
                   type="email"
@@ -47,8 +47,8 @@ const Login = ({sendEmailToParent}) => {
               </div>
 
               <div>
-                <label htmlFor="password">Password</label>
-                <input
+                <label htmlFor="password"></label>
+                <input className="login__password deep"
                   id="password"
                   name="password"
                   type="password"
@@ -59,12 +59,12 @@ const Login = ({sendEmailToParent}) => {
               </div>
 
               <div>
-                <button onClick={onLogin}>Login</button>
+                <button className="login__btn" onClick={onLogin}>Login</button>
               </div>
             </form>
 
-            <p className="text-sm text-white text-center">
-              No account yet? <NavLink to="/signup">Sign up</NavLink>
+            <p className="text-sm text-white text-center login__link">
+              <strong>No account yet?</strong> <NavLink to="/signup"><strong>Sign in</strong></NavLink>
             </p>
           </div>
         </section>
