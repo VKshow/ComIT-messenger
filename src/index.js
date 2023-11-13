@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ErrorPage from "./page/error";
 import Home from "./page/Home";
 import Signup from "./page/Signup";
@@ -16,16 +16,22 @@ const App = () => {
     setUserEmail(email);
   };
 
-const router = createBrowserRouter([
-  { path: "/", element: <Home userEmail={userEmail} sendEmailToParent={sendEmailToParent} />, errorElement: <ErrorPage /> },
-  { path: "/signup", element: <Signup /> },
-  { path: "/login", element: <Login sendEmailToParent={sendEmailToParent} /> },
-  { path: "/x", element: <Anotherpage /> },
-]);
-
   return (
     <React.StrictMode>
-      <RouterProvider router={router} sendEmailToParent={sendEmailToParent} />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home userEmail={userEmail} sendEmailToParent={sendEmailToParent} />}
+          />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/login"
+            element={<Login sendEmailToParent={sendEmailToParent} />}
+          />
+          <Route path="/x" element={<Anotherpage />} />
+        </Routes>
+      </Router>
     </React.StrictMode>
   );
 };
