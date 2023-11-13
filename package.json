@@ -1,7 +1,6 @@
 {
   "name": "comitmessenger",
   "version": "0.1.0",
-  "private": true,
   "homepage": "https://vkshow.github.io/comit-messenger",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
