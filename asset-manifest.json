@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ComIT-messenger/static/css/main.19562852.css",
-    "main.js": "/ComIT-messenger/static/js/main.7794bf8f.js",
-    "index.html": "/ComIT-messenger/index.html",
-    "main.19562852.css.map": "/ComIT-messenger/static/css/main.19562852.css.map",
-    "main.7794bf8f.js.map": "/ComIT-messenger/static/js/main.7794bf8f.js.map"
+    "main.css": "/comit-messenger/static/css/main.19562852.css",
+    "main.js": "/comit-messenger/static/js/main.7421c6a4.js",
+    "index.html": "/comit-messenger/index.html",
+    "main.19562852.css.map": "/comit-messenger/static/css/main.19562852.css.map",
+    "main.7421c6a4.js.map": "/comit-messenger/static/js/main.7421c6a4.js.map"
   },
   "entrypoints": [
     "static/css/main.19562852.css",
-    "static/js/main.7794bf8f.js"
+    "static/js/main.7421c6a4.js"
   ]
 }
