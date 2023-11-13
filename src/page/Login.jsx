@@ -64,7 +64,7 @@ const Login = ({sendEmailToParent}) => {
             </form>
 
             <p className="text-sm text-white text-center login__link">
-              <strong>No account yet?</strong> <NavLink to="/signup"><strong>Sign in</strong></NavLink>
+              <strong>No account yet?</strong> <NavLink to="/signup"><strong>Sign up</strong></NavLink>
             </p>
           </div>
         </section>
