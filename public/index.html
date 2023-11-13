@@ -2,42 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="data:image/png;base64,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" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="ComIT messenger"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

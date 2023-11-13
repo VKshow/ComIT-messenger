@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorPage from "./page/error";
+import Home from "./page/Home";
+import Signup from "./page/Signup";
+import Login from "./page/Login";
+import Anotherpage from "./page/Anotherpage";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import './index.css'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App = () => {
+  const [userEmail, setUserEmail] = useState('');
+
+  const sendEmailToParent = (email) => {
+    setUserEmail(email);
+  };
+
+  const router = createBrowserRouter([
+    { path: "/", element: <Home userEmail={userEmail} sendEmailToParent={sendEmailToParent} />, errorElement: <ErrorPage /> },
+    { path: "/signup", element: <Signup /> },
+    { path: "/login", element: <Login sendEmailToParent={sendEmailToParent} /> },
+    { path: "/x", element: <Anotherpage /> },
+  ]);
+
+  return (
+    <React.StrictMode>
+      <RouterProvider router={router} sendEmailToParent={sendEmailToParent} />
+    </React.StrictMode>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
