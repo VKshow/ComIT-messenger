@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 // import ErrorPage from "./page/error";
 import Home from "./page/Home";
@@ -24,7 +24,7 @@ const App = () => {
             path="/"
             element={<Home userEmail={userEmail} sendEmailToParent={sendEmailToParent} />}
           />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Signup sendEmailToParent={sendEmailToParent}/>} />
           <Route
             path="/login"
             element={<Login sendEmailToParent={sendEmailToParent} />}

@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
-const Signup = () => {
+const Signup = ({sendEmailToParent}) => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -22,6 +22,7 @@ const Signup = () => {
         // navigate("/login");
         navigate("/");
         // ...
+        sendEmailToParent(email);
       })
       .catch((error) => {
         const errorCode = error.code;

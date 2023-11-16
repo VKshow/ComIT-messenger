@@ -312,6 +312,11 @@ button:focus-visible {
   }
 }
 
+.error-login{
+  margin-top: 20px;
+  color: red;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

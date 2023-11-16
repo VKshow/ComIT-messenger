@@ -7,6 +7,7 @@ const Login = ({sendEmailToParent}) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [logError, setLogError] = useState(false);
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -24,8 +25,15 @@ const Login = ({sendEmailToParent}) => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
         console.log('message that login goes wrong');
+        setLogError(true);
       });
   };
+
+  const ErrorMessage = () => {
+    return(
+      <p className="error-login">User doesn't exist, try to Sign Up</p>
+    )
+  }
 
   return (
     <>
@@ -43,6 +51,7 @@ const Login = ({sendEmailToParent}) => {
                   type="email"
                   required
                   placeholder="Email address"
+                  autoComplete="username"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
@@ -55,6 +64,7 @@ const Login = ({sendEmailToParent}) => {
                   type="password"
                   required
                   placeholder="Password"
+                  autoComplete="current-password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
@@ -67,6 +77,8 @@ const Login = ({sendEmailToParent}) => {
             <p className="text-sm text-white text-center login__link">
               <strong>No account yet?</strong> <NavLink to="/signup"><strong>Sign up</strong></NavLink>
             </p>
+
+            {logError && <ErrorMessage/>}
           </div>
         </section>
       </main>

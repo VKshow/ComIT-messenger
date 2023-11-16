@@ -14,6 +14,16 @@ export default function Home({ userEmail }) {
   const [messageText, setMessageText] = useState([]);
   const messagesEndRef = useRef(null);
 
+  const pickUpDate = () =>{
+    const today = new Date();
+    const date = today.getDate();
+    const month = today.getMonth() + 1; // Months are zero-based
+    const year = today.getFullYear();
+
+    return `${year}-${month}-${date}`;
+  }
+  const date = pickUpDate();
+
   const addMessage = async (e) => {
     e.preventDefault();
 
@@ -21,11 +31,12 @@ export default function Home({ userEmail }) {
       const docRef = await addDoc(collection(db, "messageText"), {
         userEmail: userEmail,
         message: message,
+        date: date
       });
 
       setMessageText((prevMessages) => [
         ...prevMessages,
-        { userEmail: userEmail, message: message, id: docRef.id },
+        { userEmail: userEmail, message: message, date: date, id: docRef.id },
       ]);
 
       setMessage("");
@@ -41,6 +52,9 @@ export default function Home({ userEmail }) {
         ...doc.data(),
         id: doc.id,
       }));
+
+      newData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
       setMessageText(newData);
     } catch (error) {
       console.error("Error fetching documents: ", error);
@@ -109,13 +123,14 @@ export default function Home({ userEmail }) {
                 <div className="message" key={i}>
                   <div className="message__ava">
                     <img
-                      src="https://www.svgrepo.com/show/58873/male-user-shadow.svg"
+                      src="https://media.tenor.com/hdZmLIbVqsoAAAAi/skidee-pfp-discord-pfp.gif"
                       alt="ava"
                     />
                     <div className="nickname">
-                      <strong>{userName}:</strong>
+                      <strong>{userName}</strong>
                     </div>
                   </div>
+                  <div className="message__date">{message.date}</div>
                   <div className="message__text">{message.message}</div>
                 </div>
               );
@@ -124,20 +139,21 @@ export default function Home({ userEmail }) {
           </div>
         </div>
         <div>
-          <div>
+          <form>
             <input className="message__input"
               type="text"
               placeholder={`${userEmail.split('@')[0]} enter your message`}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-          </div>
-
-          <div className="btn-container">
+            <div className="btn-container">
             <button type="submit" className="btn message__btn" onClick={addMessage}>
               Submit
             </button>
           </div>
+          </form>
+
+          
         </div>
       </section>
       
