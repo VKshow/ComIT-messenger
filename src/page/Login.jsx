@@ -23,6 +23,7 @@ const Login = ({sendEmailToParent}) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+        console.log('message that login goes wrong');
       });
   };
 
