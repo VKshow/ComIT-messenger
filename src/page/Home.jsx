@@ -52,6 +52,17 @@ export default function Home({ userEmail }) {
     scrollToBottom();
   }, []);
 
+
+ //auto update messages
+
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     fetchPost();
+  //   }, 3000);
+
+  //   return () => clearInterval(intervalId);
+  // }, []); 
+
   useEffect(() => {
     scrollToBottom();
   }, [messageText]);
