@@ -311,10 +311,20 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
+.message__date{
+  position: absolute;
+  top:3px;
+  right: 7px;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.738);
+}
 .error-login{
   margin-top: 20px;
   color: red;
+}
+.my-message{
+  margin-left: 170px;
+  background:#0066ff6e;
 }
 
 #root {

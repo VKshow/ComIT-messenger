@@ -8,6 +8,7 @@ const Signup = ({sendEmailToParent}) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [logError, setLogError] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -28,9 +29,15 @@ const Signup = ({sendEmailToParent}) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+        setLogError(true);
         // ..
       });
   };
+  const ErrorMessage = () => {
+    return(
+      <p className="error-login">Password must have minimum 6 symbols</p>
+    )
+  }
 
   return (
     <main>
@@ -71,6 +78,7 @@ const Signup = ({sendEmailToParent}) => {
             <p className="text-sm text-white text-center login__link">
               <strong>Already have an account?</strong> <NavLink to="/login"><strong>Sign in</strong></NavLink>
             </p>
+            {logError && <ErrorMessage/>}
           </div>
         </div>
       </section>

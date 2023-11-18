@@ -14,14 +14,22 @@ export default function Home({ userEmail }) {
   const [messageText, setMessageText] = useState([]);
   const messagesEndRef = useRef(null);
 
-  const pickUpDate = () =>{
+  const pickUpDate = () => {
     const today = new Date();
     const date = today.getDate();
     const month = today.getMonth() + 1; // Months are zero-based
     const year = today.getFullYear();
-
-    return `${year}-${month}-${date}`;
-  }
+    const hours = today.getHours();
+    const minutes = today.getMinutes();
+  
+    
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+  
+   
+    const formattedDateTime = `${year}-${month}-${date} ${hours}:${formattedMinutes}`;
+  
+    return formattedDateTime;
+  };
   const date = pickUpDate();
 
   const addMessage = async (e) => {
@@ -53,7 +61,12 @@ export default function Home({ userEmail }) {
         id: doc.id,
       }));
 
-      newData.sort((a, b) => new Date(b.date) - new Date(a.date));
+      newData.sort((a, b) => {
+        const dateA = new Date(`${a.date} ${a.time}`);
+        const dateB = new Date(`${b.date} ${b.time}`);
+        
+        return dateA - dateB;
+      });
 
       setMessageText(newData);
     } catch (error) {
@@ -118,9 +131,10 @@ export default function Home({ userEmail }) {
                 atIndex !== -1
                   ? message.userEmail.slice(0, atIndex)
                   : message.userEmail;
+              const myMessage = message.userEmail === userEmail;
 
               return (
-                <div className="message" key={i}>
+                <div className={`message ${myMessage ? 'my-message' : ''}`}   key={i}>
                   <div className="message__ava">
                     <img
                       src="https://media.tenor.com/hdZmLIbVqsoAAAAi/skidee-pfp-discord-pfp.gif"
